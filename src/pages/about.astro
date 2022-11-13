@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 const pageTitle = "About JJ";
 const identity = {
@@ -50,13 +52,7 @@ function getRandomHobby() {
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/blog">Blog</a></li>
-        </ul>
-      </nav>
+      <Navigation />
     </header>
     <main class="text-center">
       <h1 class="text-4xl font-extrabold text-purple-800 my-10">{pageTitle}</h1>
@@ -83,5 +79,6 @@ function getRandomHobby() {
         }
       </ul>
     </main>
+    <Footer />
   </body>
 </html>
