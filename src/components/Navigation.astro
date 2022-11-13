@@ -1,8 +1,9 @@
 ---
+import NavLink from "./NavLink.astro";
 ---
 
-<nav>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
+<nav class="flex gap-5 mr-5">
+  <NavLink location="/" name="Home" />
+  <NavLink location="/about/" name="About" />
+  <NavLink location="/blog/" name="Blog" />
 </nav>

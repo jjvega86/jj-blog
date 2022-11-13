@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const pageTitle = "About JJ";
@@ -51,9 +51,7 @@ function getRandomHobby() {
     <title>{pageTitle}</title>
   </head>
   <body>
-    <header>
-      <Navigation />
-    </header>
+    <Header />
     <main class="text-center">
       <h1 class="text-4xl font-extrabold text-purple-800 my-10">{pageTitle}</h1>
       <h2 class="text-2xl font-bold my-5">Facts About Me:</h2>
