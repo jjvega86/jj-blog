@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 const pageTitle = "About JJ";
 const identity = {
   firstName: "JJ",
@@ -56,25 +58,29 @@ function getRandomHobby() {
         </ul>
       </nav>
     </header>
-    <main>
-      <h1 class="text-5xl font-extrabold text-purple-800">{pageTitle}</h1>
-      <p>Facts About Me:</p>
+    <main class="text-center">
+      <h1 class="text-4xl font-extrabold text-purple-800 my-10">{pageTitle}</h1>
+      <h2 class="text-2xl font-bold my-5">Facts About Me:</h2>
       <ul>
         <li>My name is {identity.firstName}.</li>
         <li>
-          I live in {identity.country} and work as a {identity.occupation}
+          I live in {identity.country} and work as a {identity.occupation}.
         </li>
         {
           identity.hobbies.length >= 2 && (
             <li>
-              Two of my hobbies are {getRandomHobby()} and {getRandomHobby()}
+              Two of my hobbies are {getRandomHobby()} and {getRandomHobby()}.
             </li>
           )
         }
       </ul>
-      <p>My skills are:</p>
+      <h2 class="text-2xl font-bold my-5">My Skills Are:</h2>
       <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
+        {
+          skills.map((skill) => (
+            <li class="text-green-500 font-bold">{skill}</li>
+          ))
+        }
       </ul>
     </main>
   </body>
