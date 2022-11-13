@@ -57,7 +57,7 @@ function getRandomHobby() {
       </nav>
     </header>
     <main>
-      <h1>{pageTitle}</h1>
+      <h1 class="text-5xl font-extrabold text-purple-800">{pageTitle}</h1>
       <p>Facts About Me:</p>
       <ul>
         <li>My name is {identity.firstName}.</li>
@@ -74,7 +74,7 @@ function getRandomHobby() {
       </ul>
       <p>My skills are:</p>
       <ul>
-        {skills.map((skill) => <li>{skill}</li>)}
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
       </ul>
     </main>
   </body>
