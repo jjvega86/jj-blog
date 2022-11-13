@@ -1,10 +1,9 @@
 ---
-import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "JJ Vega";
 ---
 
-<BaseLayout>
-  <h1 class="text-center text-4xl font-bold">Enter: {pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
+  <h1 class="text-4xl font-bold">Enter: {pageTitle}</h1>
 </BaseLayout>

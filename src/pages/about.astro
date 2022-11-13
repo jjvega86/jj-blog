@@ -1,7 +1,5 @@
 ---
-import "../styles/global.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About JJ";
 const identity = {
@@ -51,9 +49,10 @@ function getRandomHobby() {
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Header />
-    <main class="text-center">
-      <h1 class="text-4xl font-extrabold text-purple-800 my-10">{pageTitle}</h1>
+    <BaseLayout pageTitle={pageTitle}>
+      <h1 class="text-4xl font-extrabold text-purple-800 my-10">
+        {pageTitle}
+      </h1>
       <h2 class="text-2xl font-bold my-5">Facts About Me:</h2>
       <ul>
         <li>My name is {identity.firstName}.</li>
@@ -76,7 +75,6 @@ function getRandomHobby() {
           ))
         }
       </ul>
-    </main>
-    <Footer />
+    </BaseLayout>
   </body>
 </html>
