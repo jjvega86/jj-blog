@@ -1,4 +1,41 @@
 ---
+const pageTitle = "About JJ";
+const identity = {
+  firstName: "JJ",
+  lastName: "Vega",
+  country: "United States",
+  occupation: "Lead Coding Instructor and Content Creator",
+  hobbies: [
+    "strength training",
+    "yoga",
+    "hiking",
+    "gaming",
+    "cooking",
+    "adult coloring",
+  ],
+};
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Tailwind CSS",
+  "React",
+  "Astro",
+  "Node.js",
+  "Express.js",
+  "Git/GitHub",
+  "MySQL",
+  "Next.js",
+  "Python",
+  "Django",
+  "Adobe Xd",
+  "Postman",
+];
+
+function getRandomHobby() {
+  return identity.hobbies[Math.floor(Math.random() * identity.hobbies.length)];
+}
 ---
 
 <html lang="en">
@@ -7,7 +44,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>About</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <header>
@@ -20,15 +57,25 @@
       </nav>
     </header>
     <main>
-      <h1>About JJ Vega</h1>
-      <h2>... and my new Astro site!</h2>
-      <p>
-        I am working through Astro's introductory tutorial. This is the second
-        page on the website!
-      </p>
-      <p>
-        I intend to build this up as my primary blog, so keep checking back!
-      </p>
+      <h1>{pageTitle}</h1>
+      <p>Facts About Me:</p>
+      <ul>
+        <li>My name is {identity.firstName}.</li>
+        <li>
+          I live in {identity.country} and work as a {identity.occupation}
+        </li>
+        {
+          identity.hobbies.length >= 2 && (
+            <li>
+              Two of my hobbies are {getRandomHobby()} and {getRandomHobby()}
+            </li>
+          )
+        }
+      </ul>
+      <p>My skills are:</p>
+      <ul>
+        {skills.map((skill) => <li>{skill}</li>)}
+      </ul>
     </main>
   </body>
 </html>
