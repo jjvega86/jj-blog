@@ -1,11 +1,12 @@
 ---
 import CTAButton from "./CTAButton.astro";
+import Hamburger from "./Hamburger.astro";
 import NavLink from "./NavLink.astro";
 ---
 
 <nav>
   <div class="sm:hidden">
-    <p class="text-4xl mr-5 cursor-pointer">🍔</p>
+    <Hamburger />
   </div>
   <div class="sm:flex gap-5 mr-5 hidden">
     <NavLink location="/" name="Home" />
