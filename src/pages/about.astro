@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Title from "../components/Title.astro";
 
-const pageTitle: string = "About JJ";
+const pageTitle: string = "About";
+
 const identity = {
   firstName: "JJ",
   lastName: "Vega",
@@ -50,9 +52,6 @@ function getRandomHobby() {
   </head>
   <body>
     <BaseLayout pageTitle={pageTitle}>
-      <h1 class="text-4xl font-extrabold text-purple-800 my-10">
-        {pageTitle}
-      </h1>
       <h2 class="text-2xl font-bold my-5">Facts About Me:</h2>
       <ul>
         <li>My name is {identity.firstName}.</li>

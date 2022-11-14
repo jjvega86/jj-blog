@@ -3,6 +3,7 @@ import "../styles/global.css";
 import "@fontsource/urbanist";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Title from "../components/Title.astro";
 
 type Props = {
   pageTitle: string;
@@ -22,6 +23,7 @@ const { pageTitle }: Props = Astro.props;
   <body class="font-urban">
     <Header />
     <main class="mt-10">
+      <Title pageTitle={pageTitle} />
       <slot />
     </main>
     <Footer />
