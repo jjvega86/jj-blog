@@ -1,8 +1,6 @@
 ---
 import Social from "./Social.astro";
-function generateCurrentYear() {
-  return new Date().getFullYear().toString();
-}
+import { generateCurrentYear } from "../util/helpers";
 ---
 
 <footer class="mt-10 bg-gray-300 h-40">
