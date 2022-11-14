@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ImageContainer from "../components/ImageContainer.astro";
 import headshot from "../images/IMG_0215.jpg";
+import { getRandomHobby } from "../util/helpers";
 
 const pageTitle: string = "About";
 
@@ -37,10 +38,6 @@ const skills = [
   "Adobe Xd",
   "Postman",
 ];
-
-function getRandomHobby() {
-  return identity.hobbies[Math.floor(Math.random() * identity.hobbies.length)];
-}
 ---
 
 <html lang="en">
@@ -64,7 +61,8 @@ function getRandomHobby() {
         {
           identity.hobbies.length >= 2 && (
             <li>
-              Two of my hobbies are {getRandomHobby()} and {getRandomHobby()}.
+              Two of my hobbies are {getRandomHobby(identity)} and{" "}
+              {getRandomHobby(identity)}.
             </li>
           )
         }
