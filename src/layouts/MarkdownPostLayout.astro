@@ -1,7 +1,21 @@
 ---
+import ImageContainer from "../components/ImageContainer.astro";
+
 const { frontmatter } = Astro.props;
 ---
 
-<h1>{frontmatter.title}</h1>
-<p class="mb-10">Written by {frontmatter.author}</p>
-<slot />
+<article class="grid place-content-center mt-10 font-urban">
+  <h1 class="font-bold text-2xl text-center mb-8">{frontmatter.title}</h1>
+  <ImageContainer
+    url={frontmatter.image.url}
+    width="300"
+    alt={frontmatter.image.alt}
+  />
+  <div class="flex gap-4 my-5 justify-center">
+    <p>Written by <span class="font-bold">{frontmatter.author}</span></p>
+    <p>
+      Published: <span class="italic">{frontmatter.pubDate.slice(0, 10)}</span>
+    </p>
+  </div>
+  <slot />
+</article>

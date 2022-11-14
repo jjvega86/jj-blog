@@ -10,8 +10,6 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-Published On: 2022-11-13
-
 Welcome to my new blog! Stuff and things.
 
 ## What I've accomplished
