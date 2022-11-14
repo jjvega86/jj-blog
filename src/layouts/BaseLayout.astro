@@ -4,7 +4,11 @@ import "@fontsource/urbanist";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const { pageTitle } = Astro.props;
+type Props = {
+  pageTitle: string;
+};
+
+const { pageTitle }: Props = Astro.props;
 ---
 
 <html lang="en">
@@ -17,7 +21,7 @@ const { pageTitle } = Astro.props;
   </head>
   <body class="font-urban">
     <Header />
-    <main class="mt-5">
+    <main class="mt-10">
       <slot />
     </main>
     <Footer />
