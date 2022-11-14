@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Title from "../components/Title.astro";
+import ImageContainer from "../components/ImageContainer.astro";
+import headshot from "../images/IMG_0215.jpg";
 
 const pageTitle: string = "About";
 
@@ -52,11 +53,13 @@ function getRandomHobby() {
   </head>
   <body>
     <BaseLayout pageTitle={pageTitle}>
-      <h2 class="text-2xl font-bold my-5">Facts About Me:</h2>
+      <ImageContainer url={headshot} alt="jj headshot" width="360" />
+
+      <h2 class="text-2xl font-bold my-5">Facts</h2>
       <ul>
-        <li>My name is {identity.firstName}.</li>
+        <li>My name is {identity.firstName} {identity.lastName}.</li>
         <li>
-          I live in {identity.country} and work as a {identity.occupation}.
+          I live in the {identity.country} and work as a {identity.occupation}.
         </li>
         {
           identity.hobbies.length >= 2 && (
@@ -66,13 +69,9 @@ function getRandomHobby() {
           )
         }
       </ul>
-      <h2 class="text-2xl font-bold my-5">My Skills Are:</h2>
+      <h2 class="text-2xl font-bold my-5">My Skills</h2>
       <ul>
-        {
-          skills.map((skill) => (
-            <li class="text-green-500 font-bold">{skill}</li>
-          ))
-        }
+        {skills.map((skill) => <li>{skill}</li>)}
       </ul>
     </BaseLayout>
   </body>

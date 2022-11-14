@@ -1,0 +1,13 @@
+---
+type Props = {
+  url: string;
+  alt: string;
+  width: string;
+};
+
+let { url, alt, width }: Props = Astro.props;
+---
+
+<div class="grid place-content-center">
+  <img class="rounded-lg" src={url} alt={alt} width={width} />
+</div>
