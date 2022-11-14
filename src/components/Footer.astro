@@ -1,15 +1,19 @@
 ---
 import Social from "./Social.astro";
+function generateCurrentYear() {
+  return new Date().getFullYear().toString();
+}
 ---
 
 <footer class="mt-10 bg-gray-300 h-40">
-  <ul class="flex justify-center items-center w-full h-full">
-    <li>
+  <div class="flex flex-col justify-center items-center w-full h-full">
+    <div class="mb-8">
       <Social
         platformName="LinkedIn"
         URL="https://www.linkedin.com/in/jj-vega/"
       />
-    </li>
-    <li><Social platformName="GitHub" URL="https://github.com/jjvega86" /></li>
-  </ul>
+      <Social platformName="GitHub" URL="https://github.com/jjvega86" />
+    </div>
+    <small>&copy; Copyright {generateCurrentYear()}, JJ Vega</small>
+  </div>
 </footer>
