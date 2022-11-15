@@ -3,5 +3,9 @@ const { src, URL, alt } = Astro.props;
 ---
 
 <a href={URL}>
-  <img class="inline" src={src} alt={alt} />
+  <img
+    class="inline transition-transform delay-150 duration-200 hover:-translate-y-1"
+    src={src}
+    alt={alt}
+  />
 </a>
