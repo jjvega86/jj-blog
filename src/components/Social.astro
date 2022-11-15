@@ -1,5 +1,7 @@
 ---
-const { platformName, URL } = Astro.props;
+const { src, URL, alt } = Astro.props;
 ---
 
-<a class="p-2 hover:text-blue-700" href={URL}>{platformName}</a>
+<a href={URL}>
+  <img class="inline" src={src} alt={alt} />
+</a>

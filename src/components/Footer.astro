@@ -5,12 +5,17 @@ import { generateCurrentYear } from "../util/helpers";
 
 <footer class="mt-10 bg-gray-300 h-40">
   <div class="flex flex-col justify-center items-center w-full h-full">
-    <div class="mb-8">
+    <div class="mb-8 flex-row">
       <Social
-        platformName="LinkedIn"
+        src="src/images/icons8-linkedin-circled-48.png"
         URL="https://www.linkedin.com/in/jj-vega/"
+        alt="linkedin icon"
       />
-      <Social platformName="GitHub" URL="https://github.com/jjvega86" />
+      <Social
+        src="src/images/icons8-github-48.png"
+        URL="https://github.com/jjvega86"
+        alt="github icon"
+      />
     </div>
     <small>&copy; Copyright {generateCurrentYear()}, JJ Vega</small>
   </div>
