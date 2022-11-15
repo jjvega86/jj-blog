@@ -3,15 +3,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ImageContainer from "../components/ImageContainer.astro";
 import hero from "../images/mountain-hero.jpg";
 
-const pageTitle = "Welcome to the 🧠 of JJ Vega";
+const pageTitle = "The 🧠 of JJ Vega";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <p class="my-5 text-xl">
-    Get to know me, see what I'm thinking about, and <span
+    A blog about web development, coaching, and personal growth.
+  </p>
+  <p class="text-xl mb-10">
+    Got a problem? I'd love to help you <a
       class="text-blue-700 text-2xl"
-      ><a href="mailto:jj.vega86@gmail.com">work with me.</a>
-    </span>
+      href="mailto:jj.vega86@gmail.com">solve it.</a
+    >
   </p>
   <ImageContainer url={hero} alt="mountain range" width="640" />
 </BaseLayout>
