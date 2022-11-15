@@ -3,3 +3,4 @@ TODO: Add Frontend Mentor social link and icons to Social component
 TODO: Verify new Vercel domain
 TODO: Refactor for best possible semantic element usage
 TODO: Update all socials and profiles with new website URL 🎉
+TODO: Slide in mobile menu <aside> with animated hamburger
