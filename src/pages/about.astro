@@ -9,7 +9,7 @@ const pageTitle: string = "About";
 const identity = {
   firstName: "JJ",
   lastName: "Vega",
-  country: "United States",
+  location: "Signal Mountain, TN",
   occupation: "Lead Coding Instructor and Content Creator",
   hobbies: [
     "strength training",
@@ -40,37 +40,27 @@ const skills = [
 ];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-  </head>
-  <body>
-    <BaseLayout pageTitle={pageTitle}>
-      <p class="mb-8 text-xl">💻 Web Developer. ❤️ Coach. 🐶 Dog Dad.</p>
-      <ImageContainer url={headshot} alt="jj headshot" width="360" />
-      <h2 class="text-2xl font-bold my-5">Facts</h2>
-      <ul>
-        <li>My name is {identity.firstName} {identity.lastName}.</li>
+<BaseLayout pageTitle={pageTitle}>
+  <p class="mb-8 text-xl">💻 Web Developer. ❤️ Coach. 🐶 Dog Dad.</p>
+  <ImageContainer url={headshot} alt="jj headshot" width="360" />
+  <h2 class="text-2xl font-bold mt-10">Facts</h2>
+  <ul>
+    <li>
+      I live in {identity.location} and work as a <span class="text-blue-700"
+        >{identity.occupation}</span
+      >.
+    </li>
+    {
+      identity.hobbies.length >= 2 && (
         <li>
-          I live in the {identity.country} and work as a {identity.occupation}.
+          Two of my hobbies are {getRandomHobby(identity)} and{" "}
+          {getRandomHobby(identity)}.
         </li>
-        {
-          identity.hobbies.length >= 2 && (
-            <li>
-              Two of my hobbies are {getRandomHobby(identity)} and{" "}
-              {getRandomHobby(identity)}.
-            </li>
-          )
-        }
-      </ul>
-      <h2 class="text-2xl font-bold my-5">My Skills</h2>
-      <ul>
-        {skills.map((skill) => <li>{skill}</li>)}
-      </ul>
-    </BaseLayout>
-  </body>
-</html>
+      )
+    }
+  </ul>
+  <h2 class="text-2xl font-bold mt-8">Skills</h2>
+  <ul>
+    {skills.map((skill) => <li>{skill}</li>)}
+  </ul>
+</BaseLayout>
