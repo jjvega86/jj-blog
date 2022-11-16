@@ -2,7 +2,7 @@
 let { tags } = Astro.props;
 ---
 
-<div class="flex justify-center align-middle gap-5 mb-10">
+<div class="flex justify-center align-middle flex-wrap gap-5 mb-10">
   {
     tags.map((tag: string) => (
       <p class="text-blue-700 text-lg m-1 p-4 border-dotted shadow-xl cursor-pointer transition-all duration-300 hover:mx-5 hover:scale-125 border-gray-700 rounded-lg bg-slate-50">
