@@ -1,6 +1,7 @@
 ---
 import ImageContainer from "../components/ImageContainer.astro";
 import BaseLayout from "./BaseLayout.astro";
+import Tags from "../components/Tags.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -19,6 +20,7 @@ const { frontmatter } = Astro.props;
         >
       </p>
     </div>
+    <Tags tags={frontmatter.tags} />
     <slot />
   </article>
 </BaseLayout>
