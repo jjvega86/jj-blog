@@ -23,7 +23,9 @@ const { pageTitle }: Props = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body class="font-urban">
+  <body
+    class="font-urban bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
+  >
     <Header />
     <main class="mt-10">
       <Title pageTitle={pageTitle} />

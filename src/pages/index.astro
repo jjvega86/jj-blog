@@ -1,13 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HeroBaseLayout from "../layouts/HeroBaseLayout.astro";
 import ImageContainer from "../components/ImageContainer.astro";
 import hero from "../images/mountain-hero.jpg";
 
 const pageTitle = "The 🧠 of JJ Vega";
 ---
 
-<HeroBaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle}>
   <p class="my-5 text-xl">
     A blog about web development, coaching, and personal growth.
   </p>
@@ -17,4 +16,5 @@ const pageTitle = "The 🧠 of JJ Vega";
       href="mailto:jj.vega86@gmail.com">solve it.</a
     >
   </p>
-</HeroBaseLayout>
+  <ImageContainer url={hero} width="540" alt="mountain image" />
+</BaseLayout>

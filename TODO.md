@@ -5,5 +5,6 @@ TODO: Slide in mobile menu <aside> with animated hamburger
 TODO: Refactor skills to be a grid of icons
 TODO: Refactor blog post links -> card component with header image
 TODO: Add projects page and display featured work (or just put a section on Home)
+TODO: Add mountain hero background image to index
 TODO: Create a Notion service to pull in content from personal Notion workspace
 TODO: Update all socials and profiles with new website URL 🎉
