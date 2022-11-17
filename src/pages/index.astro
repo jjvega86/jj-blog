@@ -1,20 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ImageContainer from "../components/ImageContainer.astro";
-import hero from "../images/mountain-hero.jpg";
+import Avatar from "../components/Avatar.astro";
+import Title from "../components/Title.astro";
 
-const pageTitle = "The 🧠 of JJ Vega";
+const pageTitle = "";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p class="my-5 text-xl">
-    A blog about web development, coaching, and personal growth.
-  </p>
-  <p class="text-xl mb-10">
-    Got a problem? I'd love to help you <a
-      class="text-blue-700 text-2xl"
-      href="mailto:jj.vega86@gmail.com">solve it.</a
-    >
-  </p>
-  <ImageContainer url={hero} width="540" alt="mountain image" />
+  <div class="flex flex-col justify-center align-middle">
+    <Avatar />
+    <Title pageTitle="The 🧠 of JJ Vega" />
+    <p class="mb-5 text-xl">
+      A blog about web development, coaching, and personal growth.
+    </p>
+    <p class="text-xl mb-10">
+      Got a problem? I'd love to help you <a
+        class="text-blue-700 text-2xl"
+        href="mailto:jj.vega86@gmail.com">solve it.</a
+      >
+    </p>
+  </div>
 </BaseLayout>
