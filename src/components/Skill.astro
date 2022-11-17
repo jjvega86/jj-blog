@@ -1,0 +1,19 @@
+---
+type Props = {
+  href: string;
+  src: string;
+  alt: string;
+};
+let { href, src, alt }: Props = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noreferrer">
+  <img
+    class="bg-white shadow-lg rounded-lg p-2 transition-all duration-300 hover:scale-110 hover:p-2"
+    src={src}
+    alt={alt}
+    width="60"
+    height="60"
+    title={alt}
+  />
+</a>

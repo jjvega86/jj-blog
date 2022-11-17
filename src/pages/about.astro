@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ImageContainer from "../components/ImageContainer.astro";
 import headshot from "../images/IMG_0215.jpg";
 import { getRandomHobby } from "../util/helpers";
+import SkillsGrid from "../components/SkillsGrid.astro";
 
 const pageTitle: string = "About";
 
@@ -20,47 +21,37 @@ const identity = {
     "adult coloring",
   ],
 };
-
-const skills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Tailwind CSS",
-  "React",
-  "Astro",
-  "Node.js",
-  "Express.js",
-  "Git/GitHub",
-  "MySQL",
-  "Next.js",
-  "Python",
-  "Django",
-  "Adobe Xd",
-  "Postman",
-];
 ---
 
 <BaseLayout pageTitle={pageTitle} title={pageTitle}>
-  <ImageContainer url={headshot} alt="jj headshot" width="180" />
-  <p class="mb-8 text-xl">💻 Web Developer. ❤️ Coach. 🐶 Dog Dad.</p>
-  <h2 class="text-2xl font-bold mt-10">Facts</h2>
-  <ul>
-    <li>
-      I live in {identity.location} and work as a <span class="text-blue-700"
-        >{identity.occupation}</span
-      >.
-    </li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          Two of my hobbies are {getRandomHobby(identity)} and{" "}
-          {getRandomHobby(identity)}.
-        </li>
-      )
-    }
-  </ul>
-  <h2 class="text-2xl font-bold mt-8">Skills</h2>
-  <ul>
-    {skills.map((skill) => <li>{skill}</li>)}
-  </ul>
+  <div
+    class="grid md:grid-cols-2 md:gap-6 md:place-content-center mt-10 shadow-2xl p-6"
+  >
+    <div class="self-center">
+      <ImageContainer url={headshot} alt="jj headshot" width="180" />
+      <p class="mb-8 text-xl">💻 Web Developer. ❤️ Coach. 🐶 Dog Dad.</p>
+    </div>
+    <div class="shadow-xl p-5 bg-slate-700 rounded-xl">
+      <div class="mb-14">
+        <h2 class="text-3xl font-bold mt-10">Facts</h2>
+        <ul class="mt-4 text-xl">
+          <li>
+            I live in {identity.location} and work as a {identity.occupation}.
+          </li>
+          {
+            identity.hobbies.length >= 2 && (
+              <li class="mt-3">
+                Two of my hobbies are {getRandomHobby(identity)} and{" "}
+                {getRandomHobby(identity)}.
+              </li>
+            )
+          }
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold mt-8 mb-5">Skills</h2>
+        <SkillsGrid />
+      </div>
+    </div>
+  </div>
 </BaseLayout>
