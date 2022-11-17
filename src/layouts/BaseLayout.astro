@@ -7,9 +7,10 @@ import Title from "../components/Title.astro";
 
 type Props = {
   pageTitle: string | number;
+  title: string;
 };
 
-const { pageTitle }: Props = Astro.props;
+const { pageTitle, title }: Props = Astro.props;
 ---
 
 <html lang="en">
@@ -21,7 +22,7 @@ const { pageTitle }: Props = Astro.props;
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <title>{title}</title>
   </head>
   <body
     class="font-urban bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
