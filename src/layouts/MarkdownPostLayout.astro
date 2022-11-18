@@ -6,7 +6,7 @@ import Tags from "../components/Tags.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout pageTitle={frontmatter.title} title={frontmatter.title}>
   <article class="grid place-content-center mt-10 font-urban">
     <ImageContainer
       url={frontmatter.image.url}
