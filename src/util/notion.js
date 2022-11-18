@@ -6,6 +6,12 @@ export async function getPosts() {
   try {
     const response = await notion.databases.query({
       database_id: databaseId,
+      filter: {
+        property: "Published",
+        checkbox: {
+          equals: true,
+        },
+      },
     });
     return response.results;
   } catch (error) {
