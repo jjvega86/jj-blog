@@ -1,14 +1,9 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogLink from "../components/BlogLink.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogLink from "../../components/BlogLink.astro";
+import { getPosts } from "../../util/notion";
 
-import { getPosts } from "../util/notion";
 const allPosts = await getPosts();
-console.log(
-  "Blog Title",
-  allPosts[0]["properties"]["Title"]["title"][0]["plain_text"]
-);
-console.log("Blog URL", allPosts[0]);
 const pageTitle: string = "Blog";
 ---
 
@@ -23,7 +18,7 @@ const pageTitle: string = "Blog";
     {
       allPosts.map((post) => (
         <BlogLink
-          url={post["url"]}
+          url={post["id"]}
           title={post["properties"]["Title"]["title"][0]["plain_text"]}
         />
       ))

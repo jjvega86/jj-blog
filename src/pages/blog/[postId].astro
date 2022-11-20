@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getPostContent, getPosts } from "../../util/notion";
+
+export async function getStaticPaths() {
+  let posts = await getPosts();
+
+  return posts.map((post) => {
+    return {
+      params: {
+        postId: post.id,
+      },
+      props: {
+        title: post["properties"]["Title"]["title"][0]["plain_text"],
+      },
+    };
+  });
+}
+
+let { postId } = Astro.params;
+let { title } = Astro.props;
+console.log(postId);
+console.log(title);
+let content = await getPostContent(postId);
+console.log(content);
+---
+
+<BaseLayout pageTitle={title} title={title.toString()}>
+  <h1>Some Post {postId}</h1>
+  {JSON.stringify(content, null, 2)}
+</BaseLayout>
