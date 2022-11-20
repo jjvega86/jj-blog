@@ -13,17 +13,18 @@ export async function getStaticPaths() {
       },
       props: {
         title: post["properties"]["Title"]["title"][0]["plain_text"],
+        pubDate: post["properties"]["Publish Date"].date.start,
       },
     };
   });
 }
 
 let { postId } = Astro.params;
-let { title } = Astro.props;
+let { title, pubDate } = Astro.props;
 
 let content = await getPostContent(postId);
 ---
 
 <BaseLayout pageTitle={title} title={title.toString()}>
-  <NotionPost content={content} />
+  <NotionPost content={content} pubDate={pubDate} />
 </BaseLayout>
