@@ -18,7 +18,7 @@ const pageTitle: string = "Blog";
     {
       allPosts.map((post) => (
         <BlogLink
-          url={post["id"]}
+          url={`${post["id"]}`}
           title={post["properties"]["Title"]["title"][0]["plain_text"]}
         />
       ))

@@ -1,0 +1,6 @@
+---
+let { block } = Astro.props;
+let [textContent] = block.paragraph.rich_text;
+---
+
+<p>{textContent ? textContent.text.content : <div class="m-5" />}</p>
