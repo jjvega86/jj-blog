@@ -25,6 +25,5 @@ let content = await getPostContent(postId);
 ---
 
 <BaseLayout pageTitle={title} title={title.toString()}>
-  <h1>Some Post {postId}</h1>
   <NotionPost content={content} />
 </BaseLayout>
