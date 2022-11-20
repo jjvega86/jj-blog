@@ -2,6 +2,7 @@ import { Client } from "@notionhq/client";
 const notion = new Client({ auth: import.meta.env.NOTION_KEY });
 const databaseId = import.meta.env.NOTION_DATABASE_ID;
 
+// TODO: Write helpers to whittle data down for posts list and post content
 export async function getPosts() {
   try {
     const response = await notion.databases.query({

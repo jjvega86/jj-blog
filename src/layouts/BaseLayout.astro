@@ -4,9 +4,6 @@ import "@fontsource/urbanist";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Title from "../components/Title.astro";
-import { getPosts } from "../util/notion";
-const posts = await getPosts();
-console.log(posts);
 
 type Props = {
   pageTitle: string | number;

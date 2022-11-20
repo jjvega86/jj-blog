@@ -6,7 +6,6 @@ TODO: Finish adding skills to skills grid
 TODO: Refactor blog post links -> card component with header image
 TODO: Add projects page and display featured work (or just put a section on Home)
 TODO: Add mountain hero background image to index
-TODO: Create a Notion service to pull in content from personal Notion workspace
+TODO: Create a Notion service to pull in content from personal Notion workspace (links page and dynamic pageId route to pull post content)
 TODO: Add dark mode?
-TODO: Work through Refactoring UI to update design
 TODO: Update all socials and profiles with new website URL 🎉
