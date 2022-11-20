@@ -1,13 +1,16 @@
 ---
 import NotionParagraph from "./NotionParagraph.astro";
+import NotionHeadingOne from "./NotionHeadingOne.astro";
 import NotionHeadingTwo from "./NotionHeadingTwo.astro";
 import NotionImage from "./NotionImage.astro";
+import NotionQuote from "./NotionQuote.astro";
+
 import { Debug } from "astro/components";
 let { content, pubDate } = Astro.props;
 ---
 
 <div
-  class="sm:max-w-4xl sm:mx-auto mx-10 bg-slate-700 p-6 rounded-lg text-left"
+  class="sm:max-w-4xl sm:mx-auto mx-10 bg-slate-700 p-6 rounded-lg text-left mb-10"
 >
   <p class="italic text-lg mb-8">Published: {pubDate}</p>
   {
@@ -16,13 +19,13 @@ let { content, pubDate } = Astro.props;
         case "paragraph":
           return <NotionParagraph block={block} />;
         case "heading_1":
-          return <h2>This is a Heading 1</h2>;
+          return <NotionHeadingOne block={block} />;
         case "heading_2":
           return <NotionHeadingTwo block={block} />;
         case "quote":
-          return <p>THIS IS A QUOTE</p>;
+          return <NotionQuote block={block} />;
         case "code":
-          return <code>THIS IS CODE</code>;
+          return <Debug block={block} />;
         case "image":
           return <NotionImage block={block} />;
         default:

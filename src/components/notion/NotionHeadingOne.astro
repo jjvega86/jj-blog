@@ -1,0 +1,6 @@
+---
+let { block } = Astro.props;
+let [headingOneContent] = block.heading_1.rich_text;
+---
+
+<h2 class="text-2xl my-8">{headingOneContent.text.content}</h2>

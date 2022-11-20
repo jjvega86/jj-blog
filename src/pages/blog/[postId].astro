@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NotionPost from "../../components/notion/NotionPost.astro";
+import NotionPostLayout from "../../layouts/NotionPostLayout.astro";
 import { getPostContent, getPosts } from "../../util/notion";
 
 export async function getStaticPaths() {
@@ -26,5 +27,7 @@ let content = await getPostContent(postId);
 ---
 
 <BaseLayout pageTitle={title} title={title.toString()}>
-  <NotionPost content={content} pubDate={pubDate} />
+  <NotionPostLayout>
+    <NotionPost content={content} pubDate={pubDate} />
+  </NotionPostLayout>
 </BaseLayout>
