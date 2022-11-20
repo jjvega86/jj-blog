@@ -1,0 +1,9 @@
+---
+let { block } = Astro.props;
+let codeContent = block.code.rich_text;
+console.log(codeContent);
+---
+
+<h2 class="text-xl my-8 bg-black p-10 text-slate-300 max-w-fit">
+  {codeContent.map((line) => <code>{line.text.content}</code>)}
+</h2>
