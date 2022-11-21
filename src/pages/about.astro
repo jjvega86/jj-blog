@@ -24,14 +24,14 @@ const identity = {
 ---
 
 <BaseLayout pageTitle={pageTitle} title={pageTitle}>
-  <div
-    class="grid md:grid-cols-2 md:gap-6 md:place-content-center mt-10 shadow-2xl p-10"
-  >
-    <div class="self-center shadow-xl rounded-lg">
-      <ImageContainer url={headshot} alt="jj headshot" width="180" />
-      <p class="mb-8 text-xl">💻 Web Developer. ❤️ Coach. 🐶 Dog Dad.</p>
+  <div class="grid md:grid-cols-2 md:gap-6 md:place-content-center mt-10 p-10">
+    <div class="self-center shadow-xl rounded-lg bg-slate-700 h-full">
+      <div class="mt-16">
+        <ImageContainer url={headshot} alt="jj headshot" width="180" />
+        <p class="mb-8 text-xl">💻 Web Developer. ❤️ Coach. 🐶 Dog Dad.</p>
+      </div>
     </div>
-    <div class="shadow-xl p-5 bg-slate-700 rounded-xl">
+    <div class="shadow-xl p-8 bg-slate-700 rounded-xl">
       <div class="mb-14">
         <h2 class="text-3xl font-bold">Facts</h2>
         <ul class="mt-4 text-xl">

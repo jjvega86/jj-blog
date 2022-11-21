@@ -1,0 +1,11 @@
+---
+let { tag, inline } = Astro.props;
+---
+
+<p
+  class={`text-blue-700 ${
+    inline && "inline-block"
+  } text-lg m-1 p-4 border-dotted shadow-xl cursor-pointer transition-all duration-300 hover:mx-5 hover:scale-125 border-gray-700 rounded-lg bg-slate-50 ring-4`}
+>
+  {tag}
+</p>

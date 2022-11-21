@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogGrid from "../../components/BlogGrid.astro";
+import { getPosts } from "../../util/notion";
+
+const posts = await getPosts();
+const pageTitle: string = "Blog";
+---
+
+<BaseLayout pageTitle={pageTitle} title={pageTitle}>
+  <BlogGrid posts={posts} />
+</BaseLayout>

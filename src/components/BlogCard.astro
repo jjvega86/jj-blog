@@ -1,0 +1,17 @@
+---
+let { url, title, description, pubDate, imgURL, imgAlt } = Astro.props;
+---
+
+<a
+  href={url}
+  class="bg-slate-700 relative flex flex-col justify-center align-middle shadow-xl p-6 rounded-md hover:opacity-75"
+>
+  <img src={imgURL} alt={imgAlt} class="bg-cover" />
+  <h3 class="text-2xl mt-5">{title}</h3>
+  <p>{description}</p>
+  <p
+    class="absolute tracking-wider rounded-lg text-lg p-3 top-3 left-2 bg-slate-400"
+  >
+    {new Date(pubDate).toLocaleDateString("en-US")}
+  </p>
+</a>
