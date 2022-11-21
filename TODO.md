@@ -8,4 +8,5 @@ TODO: Set tags as part of main layout to the right side (desktop only)
 TODO: Add projects page and display featured work (or just put a section on Home)
 TODO: Add dark mode?
 TODO: Add code syntax highlighting using `highlight.js`
+TODO: Format blog dates using JS Library or Date()
 TODO: Update all socials and profiles with new website URL 🎉
