@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogLink from "../../components/BlogLink.astro";
-import Tag from "../../components/Tag.astro";
+import BlogGrid from "../../components/BlogGrid.astro";
 import { getPosts } from "../../util/notion";
 
 export async function getStaticPaths({}) {
@@ -33,12 +32,5 @@ const { tag } = Astro.params;
 ---
 
 <BaseLayout pageTitle={`Tag: ${tag.toString()}`} title={`${tag.toString()}`}>
-  {
-    posts.map((post) => (
-      <BlogLink
-        url={`/blog/${post["id"]}`}
-        title={post["properties"]["Title"]["title"][0]["plain_text"]}
-      />
-    ))
-  }
+  <BlogGrid posts={posts} />
 </BaseLayout>

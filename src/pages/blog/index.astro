@@ -1,27 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogCard from "../../components/BlogCard.astro";
+import BlogGrid from "../../components/BlogGrid.astro";
 import { getPosts } from "../../util/notion";
 
-const allPosts = await getPosts();
+const posts = await getPosts();
 const pageTitle: string = "Blog";
 ---
 
 <BaseLayout pageTitle={pageTitle} title={pageTitle}>
-  <div class="mt-16 grid sm:grid-cols-3 mx-10 gap-8">
-    {
-      allPosts.map((post) => (
-        <BlogCard
-          url={`${post["id"]}`}
-          title={post["properties"]["Title"]["title"][0]["plain_text"]}
-          description={
-            post["properties"]["Description"]["rich_text"][0].text.content
-          }
-          pubDate={post["properties"]["Publish Date"]["date"].start}
-          imgURL={post["properties"]["Image URL"]["url"]}
-          imgAlt={post["properties"]["Image Alt"]["rich_text"][0].plain_text}
-        />
-      ))
-    }
-  </div>
+  <BlogGrid posts={posts} />
 </BaseLayout>
