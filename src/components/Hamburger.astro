@@ -1,1 +1,11 @@
-<p class="text-4xl mr-5 cursor-pointer">🍔</p>
+<p id="hamburger" class="text-4xl mr-5 cursor-pointer">🍔</p>
+
+<script>
+  function toggleNav() {
+    document.getElementById("mobile-nav").classList.toggle("w-0");
+    document.getElementById("mobile-nav").classList.toggle("min-w-full");
+  }
+
+  let hamburger = document.getElementById("hamburger");
+  hamburger.addEventListener("click", toggleNav);
+</script>

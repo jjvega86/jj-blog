@@ -8,7 +8,7 @@ let { posts } = Astro.props;
   {
     posts.map((post) => (
       <BlogCard
-        url={`${post["id"]}`}
+        url={`/blog/${post["id"]}/`}
         title={post["properties"]["Title"]["title"][0]["plain_text"]}
         description={
           post["properties"]["Description"]["rich_text"][0].text.content

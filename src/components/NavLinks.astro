@@ -1,0 +1,17 @@
+---
+import CTAButton from "./CTAButton.astro";
+import NavLink from "./NavLink.astro";
+let { hidden, mobile } = Astro.props;
+---
+
+<div
+  id="nav-links"
+  class={`sm:flex gap-5 mr-5 ${hidden && "hidden"} ${
+    mobile && "flex flex-col-reverse mt-36 w-50"
+  }`}
+>
+  <NavLink location="/about/" name="About" />
+  <NavLink location="/blog/" name="Blog" />
+  <NavLink location="/tags/" name="Tags" />
+  <CTAButton />
+</div>
