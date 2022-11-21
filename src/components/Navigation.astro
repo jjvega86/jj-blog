@@ -1,17 +1,13 @@
 ---
-import CTAButton from "./CTAButton.astro";
 import Hamburger from "./Hamburger.astro";
-import NavLink from "./NavLink.astro";
+import NavLinks from "./NavLinks.astro";
+import MobileNav from "./MobileNav.astro";
 ---
 
 <nav>
+  <MobileNav />
   <div class="sm:hidden">
     <Hamburger />
   </div>
-  <div class="sm:flex gap-5 mr-5 hidden">
-    <NavLink location="/about/" name="About" />
-    <NavLink location="/blog/" name="Blog" />
-    <NavLink location="/tags/" name="Tags" />
-    <CTAButton />
-  </div>
+  <NavLinks hidden />
 </nav>

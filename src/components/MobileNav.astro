@@ -1,0 +1,22 @@
+---
+import NavLinks from "./NavLinks.astro";
+---
+
+<div
+  id="mobile-nav"
+  class={`fixed top-0 left-0 w-0 min-h-screen bg-slate-800 overflow-hidden z-50 transition-all duration-500`}
+>
+  <p class="absolute top-3 right-3 text-2xl">❌</p>
+
+  <NavLinks mobile />
+</div>
+
+<script>
+  function toggleNav() {
+    document.getElementById("mobile-nav").classList.toggle("w-0");
+    document.getElementById("mobile-nav").classList.toggle("min-w-full");
+  }
+
+  let nav = document.getElementById("mobile-nav");
+  nav.addEventListener("click", toggleNav);
+</script>
