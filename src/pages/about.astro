@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ImageContainer from "../components/ImageContainer.astro";
 import headshot from "../images/IMG_0215.jpg";
-import { getRandomHobby } from "../util/helpers";
 import SkillsGrid from "../components/SkillsGrid.astro";
 
 const pageTitle: string = "About";
@@ -12,20 +11,12 @@ const identity = {
   lastName: "Vega",
   location: "Signal Mountain, TN",
   occupation: "Lead Coding Instructor and Content Creator",
-  hobbies: [
-    "strength training",
-    "yoga",
-    "hiking",
-    "gaming",
-    "cooking",
-    "adult coloring",
-  ],
 };
 ---
 
 <BaseLayout pageTitle={pageTitle} title={pageTitle}>
-  <div class="grid md:grid-cols-2 md:gap-6 md:place-content-center mt-10 p-10">
-    <div class="self-center shadow-xl rounded-lg bg-slate-700 h-full">
+  <div class="grid md:grid-cols-2 gap-6 md:place-content-center mt-10 p-10">
+    <div class="self-center shadow-xl rounded-lg bg-slate-700 h-full p-5">
       <div class="mt-16">
         <ImageContainer url={headshot} alt="jj headshot" width="180" />
         <p class="mb-8 text-xl">💻 Web Developer. ❤️ Coach. 🐶 Dog Dad.</p>
@@ -38,14 +29,10 @@ const identity = {
           <li>
             I live in {identity.location} and work as a {identity.occupation}.
           </li>
-          {
-            identity.hobbies.length >= 2 && (
-              <li class="mt-3">
-                Two of my hobbies are {getRandomHobby(identity)} and{" "}
-                {getRandomHobby(identity)}.
-              </li>
-            )
-          }
+          <li class="mt-3">
+            I'm passionate about natural living and being outdoors as much as
+            possible.
+          </li>
         </ul>
       </div>
       <div>
