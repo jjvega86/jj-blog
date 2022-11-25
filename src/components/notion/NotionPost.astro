@@ -6,6 +6,7 @@ import NotionImage from "./NotionImage.astro";
 import NotionQuote from "./NotionQuote.astro";
 import NotionCode from "./NotionCode.astro";
 import NotionListItem from "./NotionListItem.astro";
+import NotionVideo from "./NotionVideo.astro";
 
 import { Debug } from "astro/components";
 let { content, pubDate } = Astro.props;
@@ -32,6 +33,8 @@ let { content, pubDate } = Astro.props;
           return <NotionImage block={block} />;
         case "numbered_list_item":
           return <NotionListItem block={block} />;
+        case "video":
+          return <NotionVideo block={block} />;
         default:
           return <Debug block={block} />;
       }

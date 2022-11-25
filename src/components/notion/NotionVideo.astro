@@ -1,0 +1,11 @@
+---
+let { block } = Astro.props;
+let originalUrl = block.video.external.url;
+let slicedUrl = originalUrl.slice(17);
+---
+
+<iframe
+  width="640"
+  height="360"
+  src={`https://www.youtube.com/embed/${slicedUrl}`}
+  frameborder="0"></iframe>
