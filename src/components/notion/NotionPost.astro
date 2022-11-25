@@ -5,6 +5,7 @@ import NotionHeadingTwo from "./NotionHeadingTwo.astro";
 import NotionImage from "./NotionImage.astro";
 import NotionQuote from "./NotionQuote.astro";
 import NotionCode from "./NotionCode.astro";
+import NotionListItem from "./NotionListItem.astro";
 
 import { Debug } from "astro/components";
 let { content, pubDate } = Astro.props;
@@ -29,6 +30,8 @@ let { content, pubDate } = Astro.props;
           return <NotionCode block={block} />;
         case "image":
           return <NotionImage block={block} />;
+        case "numbered_list_item":
+          return <NotionListItem block={block} />;
         default:
           return <Debug block={block} />;
       }
