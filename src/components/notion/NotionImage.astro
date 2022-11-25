@@ -1,5 +1,17 @@
 ---
+function generateURL(block) {
+  let url: string;
+  switch (block.image.type) {
+    case "file":
+      console.log("ENTERED CASE");
+      url = block.image.file.url;
+    default:
+      url = block.image.external.url;
+  }
+  return url;
+}
+
 let { block } = Astro.props;
 ---
 
-<img class="my-10" src={block.image.external.url} alt={block.id} width="520" />
+<img class="my-10" src={block.image.file.url} alt={block.id} width="520" />
