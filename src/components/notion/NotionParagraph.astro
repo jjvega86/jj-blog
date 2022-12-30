@@ -7,7 +7,9 @@ let link = textContent?.href ? textContent?.href : null;
 
 {
   link !== null ? (
-    <a href={link}>{link}</a>
+    <a class="hover:text-blue-600 hover:underline text-blue-300" href={link}>
+      {link}
+    </a>
   ) : (
     <p>{textContent ? textContent.text.content : <br />}</p>
   )
