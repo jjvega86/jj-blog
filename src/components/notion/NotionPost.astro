@@ -2,6 +2,7 @@
 import NotionParagraph from "./NotionParagraph.astro";
 import NotionHeadingOne from "./NotionHeadingOne.astro";
 import NotionHeadingTwo from "./NotionHeadingTwo.astro";
+import NotionHeadingThree from "./NotionHeadingThree.astro";
 import NotionImage from "./NotionImage.astro";
 import NotionQuote from "./NotionQuote.astro";
 import NotionCode from "./NotionCode.astro";
@@ -25,6 +26,8 @@ let { content, pubDate } = Astro.props;
           return <NotionHeadingOne block={block} />;
         case "heading_2":
           return <NotionHeadingTwo block={block} />;
+        case "heading_3":
+          return <NotionHeadingThree block={block} />;
         case "quote":
           return <NotionQuote block={block} />;
         case "code":

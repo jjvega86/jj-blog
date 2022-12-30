@@ -1,6 +1,14 @@
 ---
+import { Debug } from "astro/components";
 let { block } = Astro.props;
 let [textContent] = block.paragraph.rich_text;
+let link = textContent?.href ? textContent?.href : null;
 ---
 
-<p>{textContent ? textContent.text.content : <div class="m-5" />}</p>
+{
+  link !== null ? (
+    <a href={link}>{link}</a>
+  ) : (
+    <p>{textContent ? textContent.text.content : <br />}</p>
+  )
+}
