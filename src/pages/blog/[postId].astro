@@ -24,6 +24,7 @@ let { postId } = Astro.params;
 let { title, pubDate } = Astro.props;
 
 let content = await getPostContent(postId);
+console.log(content);
 ---
 
 <BaseLayout pageTitle={title} title={title.toString()}>
