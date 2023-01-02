@@ -1,5 +1,4 @@
 ---
-import { Debug } from "astro/components";
 let { block } = Astro.props;
 let [textContent] = block.paragraph.rich_text;
 let link = textContent?.href ? textContent?.href : null;
